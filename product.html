@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/img/SI.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./src/prod-style.css">
+    <title>Produtos</title>
+</head>
+<body>
+
+    <header class="menu-fixo">
+        <div class="overlay"></div>
+        <a href=""><img src="./src/img/SI.png" alt="logo"></a>
+        <nav class="menu">
+            <a href="index.html">início</a>
+            <a href="#">produtos</a>
+            <a href="index.html">história</a>
+            <a href="index.html">contacto</a>
+        </nav>
+    </header>
+
+    <div class="geral">
+        <header>
+          <h1>FICHAS TÉCNICAS</h1>
+          <p>SAIBA TUDO PARA UMA COLHEITA DE SUCESSO</p>
+        </header>
+    
+        <main class="grid-container">
+          <div class="card" style="background-image: url('img/abobora.jpg');">
+            <h2>ABÓBORA</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/abobora.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+    
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+          <div class="card" style="background-image: url('img/alface.jpg');">
+            <h2>ALFACE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+          </div>
+    
+          <!-- ...demais cards seguem o mesmo padrão... -->
+        </main>
+    
+        <!-- Modal PDF -->
+        <div id="pdfModal" class="modal">
+          <div class="modal-content">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <iframe id="iframePDF" src="" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+   
+    <script src="./src/js/script.js"></script>
+</body>
+</html>
