@@ -1,0 +1,249 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #67a65c; /* Verde mais vibrante */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+#products-title h1{
+  font-size: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+/*Lista dos produtos*/
+#products-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 90%;
+    height: 130px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.product-card h3 {
+    color: #333;
+    padding: 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.product-card p {
+    color: #555;
+    padding: 0 15px 15px;
+    margin: 0;
+    text-align: center;
+}
+
+.investment-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.investment-form h2 {
+  font-size: 18px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.investment-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.investment-form input,
+.investment-form select {
+    width: calc(100% - 12px);
+    font-size: 12px;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.investment-form button {
+    background-color: #191c03; 
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.investment-form button:hover {
+    background-color: #4cae4c;
+    color: #191c03;
+}
+
+/*resultado da simulação*/
+#return-info {
+    background-color: #cccccc6c; /* Verde bem claro para o retorno */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #c3c63b;
+    text-align: center;
+}
+
+#return-info h3 {
+    color: #333;
+    margin-top: 0;
+}
+
+#return-info button{
+  background-color: #191c03;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+#return-info button:hover{
+  cursor: pointer;
+  background-color: #4cae4c;
+  color: #191c03;
+
+}
+
+/*grafico*/
+
+#return-chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px; /* Define uma largura máxima para o container do gráfico */
+    margin: 20px auto; /* Centraliza o gráfico na página */
+}
+
+#return-chart h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#chartCanvas {
+    width: 100% !important; /* Garante que a largura do canvas se ajuste ao container */
+    height: auto !important; /* Mantém a proporção da altura */
+}
+
+/*pagamento*/
+
+#payment-form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: left;
+}
+
+#payment-form h2 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#payment-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+#payment-form input[type="text"],
+#payment-form input[type="email"],
+#payment-form select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#payment-form button {
+    background-color: #191c03; /* Azul para o botão de pagamento */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+#payment-form button:hover {
+    background-color: #4cae4c;
+    color: #191c03;
+}
+
+#payment-status {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    #products-title h1{
+        font-size: 20px;
+    }
+    .product-card p{
+        font-size: 12px;
+    }
+    .investment-form input,
+    .investment-form select {
+        font-size: 11px;
+    }
+
+}

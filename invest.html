@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/img/SI.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./src/invest.css">
+    <link rel="stylesheet" href="./src/prod-style.css">
+    <title>Investimentos</title>
+
+    <style>
+        footer{
+    background-color: #191c03;
+    padding: 30px 20px;
+}
+footer a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+footer .inform-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+footer h3{
+    color: #c3c63b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+footer li{
+
+    color: rgba(255, 255, 255, 0.63);
+    margin-bottom: 10px;
+}
+footer ul{
+    margin-bottom: 15px;
+}
+.cont .emal{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.63);
+    margin-bottom: 10px;
+}
+.cont .emal:hover{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.63);
+}
+
+.map-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+footer p{
+    color: #c3c63b;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    footer p{
+        font-size: 10px;
+    } 
+    footer .inform-cont{
+        flex-direction: column;
+        align-items: start;
+    }
+    footer h3{
+        font-size: 12px;
+    }
+    footer li{
+        font-size: 11px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header class="menu-fixo">
+        <div class="overlay"></div>
+        <a href="index.html"><img src="./src/img/SI.png" alt="logo"></a>
+        <nav class="menu">
+            <a href="index.html">início</a>
+            <a href="product.html">produtos</a>
+            <a href="index.html">história</a>
+            <a href="index.html">contacto</a>
+            <a href="#">Investir</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products-title">
+            <h1>Produtos Disponíveis para Investimento</h1>
+        </section>
+
+        <section id="products-list">
+            </section>
+
+        <section class="investment-form">
+            <h2>Simular Investimento</h2>
+            <label for="product">Selecionar Produto:</label>
+            <select id="product" name="product">
+                <option value="">-- Selecione --</option>
+                </select><br><br>
+            <label for="investment-amount">Valor do Investimento:</label>
+            <input type="number" id="investment-amount" name="investment-amount"><br><br>
+            <label for="investment-duration">Duração do Investimento (em meses):</label>
+            <input type="number" id="investment-duration" name="investment-duration"><br><br>
+            <button onclick="simulateInvestment()">Simular</button>
+        </section>
+
+        <section id="return-info">
+            </section>
+
+        <section id="payment-form" style="display: none;">
+            <h2>Formulário de Pagamento</h2>
+            <p>Por favor, preencha os detalhes para iniciar o seu investimento:</p>
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <label for="payment-method">Método de Pagamento:</label>
+            <select id="payment-method" name="payment-method">
+                <option value="credit-card">Cartão de Crédito</option>
+                <option value="bank-transfer">Transferência Bancária</option>
+                <option value="other">Outro</option>
+            </select><br><br>
+            <button onclick="processPayment()">Confirmar Pagamento</button>
+            <button onclick="closePaymentForm()">Cancelar</button>
+            <div id="payment-status" style="margin-top: 10px;"></div>
+        </section>
+
+        <section id="return-chart">
+            <h2>Evolução do Investimento</h2>
+            <canvas id="chartCanvas"></canvas>
+        </section>
+    </main>
+
+   <footer id="footer">
+        <a class="fot" href="#"><img src="./src/img/SI.png" alt="logo"></a>
+       
+        <div class="inform-cont">
+            <ul class="local">
+                <h3>Localização</h3>
+                <li>Estrada Nacional 230, Km 30 <br>
+                    Município de Viana – Zona de Calumbo
+                    Luanda, Angola</li>
+                <li>Coordenadas: -9.051240, 13.589710</li>
+            </ul>
+            <ul class="cont">
+                <h3>Contactos</h3>
+                <li><i class="fas fa-phone"></i> (244) 922 333 444 / 997 555 777</li>
+                <li class="emal"><i class="fas fa-envelope"></i> geralfazenda@belosol.com</li>
+            </ul>
+            <ul class="hora">
+                <h3>Horários de Antendimento</h3>
+                <li>Segunda a Sexta-feira: 08:00 - 17:00</li>
+                <li>Sábado: 08:00 - 12:00</li>
+            </ul>
+        </div>
+        <div class="map-container">
+            <iframe 
+            src="https://www.google.com/maps?q=-9.051240, 13.589710&hl=pt-PT&z=10&output=embed" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                <!-- allowfullscreen="" ->  abra o mapa em tela cheia se quiser.
+                loading="lazy" -> mapa carregar só quando o usuário rolar a página até perto dele.
+                referrerpolicy="no-referrer-when-downgrade"> -> não envia o endereço do teu site (o "referer"), mantendo mais privacidade -->
+            </iframe>
+        </div>
+        <p>&copy;Todos os direitos reservados . Fazenda Belo Sol 2024</p>
+    </footer>
+
+    <script>
+        // Dados dos produtos atualizados
+        const productsData = [
+            { id: 1, name: 'Tomate', rate: 0.04, image: 'src/img/tomate.jpg' },
+            { id: 2, name: 'Pimento', rate: 0.05, image: 'src/img/pimento.jpg' },
+            { id: 3, name: 'Cenoura', rate: 0.03, image: 'src/img/cenoura.jpg' },
+            { id: 4, name: 'Alface', rate: 0.02, image: 'src/img/alface.jpg' },
+            { id: 5, name: 'Morango', rate: 0.06, image: 'src/img/morango.jpg' },
+            { id: 6, name: 'Laranja', rate: 0.035, image: 'src/img/laranja.jpg' },
+            { id: 7, name: 'Manga', rate: 0.045, image: 'src/img/manga.jpg' },
+            { id: 8, name: 'Abacate', rate: 0.025, image: 'src/img/abacate.jpg' },
+            { id: 9, name: 'Feijão', rate: 0.33, image: 'src/img/feijão.jpg' },
+            { id: 10, name: 'Cebola', rate: 0.055, image: 'src/img/cebola.jpg' },
+            { id: 11, name: 'Limão', rate: 0.07, image: 'src/img/limão.jpg' },
+            { id: 12, name: 'Alho', rate: 0.04, image: 'src/img/alho.jpg' },
+            { id: 13, name: 'Pepino', rate: 0.14, image: 'src/img/pepino.jpg' },
+            { id: 14, name: 'Gengibre', rate: 0.10, image: 'src/img/gengibre.jpg' }
+        ];
+
+        let simulationResult = null; // Variável para armazenar os resultados da simulação
+
+        const productsTitleDiv = document.getElementById('products-title');
+        const productsListDiv = document.getElementById('products-list');
+        const productSelect = document.getElementById('product');
+        const investmentAmountInput = document.getElementById('investment-amount');
+        const investmentDurationInput = document.getElementById('investment-duration');
+        const returnInfoDiv = document.getElementById('return-info');
+        const chartCanvas = document.getElementById('chartCanvas');
+        const ctx = chartCanvas.getContext('2d');
+        const paymentFormDiv = document.getElementById('payment-form');
+        const paymentStatusDiv = document.getElementById('payment-status');
+
+        function listProducts() {
+            productsData.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>Taxa de Retorno Mensal: ${(product.rate * 100).toFixed(2)}%</p>
+                `;
+                productsListDiv.appendChild(productCard);
+
+                const option = document.createElement('option');
+                option.value = product.id;
+                option.textContent = product.name;
+                productSelect.appendChild(option);
+            });
+        }
+
+        function simulateInvestment() {
+            const productId = parseInt(productSelect.value);
+            const investmentAmount = parseFloat(investmentAmountInput.value);
+            const investmentDuration = parseInt(investmentDurationInput.value);
+
+            if (isNaN(productId) || isNaN(investmentAmount) || isNaN(investmentDuration) || investmentAmount <= 0 || investmentDuration <= 0) {
+                returnInfoDiv.textContent = 'Por favor, preencha todos os campos corretamente.';
+                paymentFormDiv.style.display = 'none'; // Esconde o formulário de pagamento se houver erro
+                new Chart(ctx, { type: 'line', data: { labels: [], datasets: [] } });
+                return;
+            }
+
+            const selectedProduct = productsData.find(p => p.id === productId);
+
+            if (selectedProduct) {
+                const monthlyValues = [];
+                let currentValue = investmentAmount;
+                const labels = ['Mês 0'];
+
+                for (let i = 1; i <= investmentDuration; i++) {
+                    currentValue *= (1 + selectedProduct.rate);
+                    monthlyValues.push(currentValue.toFixed(2));
+                    labels.push(`Mês ${i}`);
+                }
+
+                const totalReturn = currentValue;
+                const profit = totalReturn - investmentAmount;
+
+                simulationResult = { // Armazena os resultados para usar no pagamento
+                    productName: selectedProduct.name,
+                    investmentAmount: investmentAmount,
+                    investmentDuration: investmentDuration,
+                    totalReturn: totalReturn,
+                    profit: profit
+                };
+
+                returnInfoDiv.innerHTML = `
+                    <h3>Resultado da Simulação</h3>
+                    <p>Produto: ${selectedProduct.name}</p>
+                    <p>Valor Investido: ${investmentAmount.toFixed(2)}</p>
+                    <p>Duração do Investimento: ${investmentDuration} meses</p>
+                    <p>Taxa de Retorno Mensal: ${(selectedProduct.rate * 100).toFixed(2)}%</p>
+                    <p>Retorno Total Estimado: ${totalReturn.toFixed(2)}</p>
+                    <p>Lucro Estimado: ${profit.toFixed(2)}</p>
+                    <button onclick="openPaymentForm()">Investir</button>
+                `;
+
+                createReturnChart(selectedProduct.name, labels, monthlyValues);
+                paymentFormDiv.style.display = 'none'; // Esconde o formulário após nova simulação
+                paymentStatusDiv.textContent = ''; // Limpa qualquer status de pagamento anterior
+
+            } else {
+                returnInfoDiv.textContent = 'Produto selecionado inválido.';
+                paymentFormDiv.style.display = 'none';
+                new Chart(ctx, { type: 'line', data: { labels: [], datasets: [] } });
+            }
+        }
+
+        function createReturnChart(productName, labels, data) {
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: `Evolução do Investimento em ${productName}`,
+                        data: data,
+                        fill: false,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            title: {
+                                display: true,
+                                text: 'Valor do Investimento'
+                            }
+                        },
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Mês'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: `Evolução do Investimento em ${productName} ao Longo do Tempo`
+                        },
+                        legend: {
+                            display: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function openPaymentForm() {
+            if (simulationResult) {
+                paymentFormDiv.style.display = 'block';
+                paymentStatusDiv.textContent = ''; // Limpa qualquer mensagem anterior
+            } else {
+                alert('Por favor, simule um investimento primeiro.');
+            }
+        }
+
+        function closePaymentForm() {
+            paymentFormDiv.style.display = 'none';
+            paymentStatusDiv.textContent = '';
+        }
+
+        function processPayment() {
+            // Aqui você adicionaria a lógica real de processamento de pagamento
+            // Isso é apenas uma simulação
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            if (name && email && paymentMethod) {
+                paymentStatusDiv.textContent = `Pagamento simulado com sucesso para ${simulationResult.productName} no valor de ${simulationResult.investmentAmount.toFixed(2)} usando ${paymentMethod}.`;
+                // Aqui você poderia redirecionar o usuário ou realizar outras ações
+            } else {
+                paymentStatusDiv.textContent = 'Por favor, preencha todos os detalhes de pagamento.';
+            }
+        }
+
+        listProducts();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

@@ -8,70 +8,183 @@
 
     <link rel="stylesheet" href="./src/prod-style.css">
     <title>Produtos</title>
+
+    <style>
+        footer{
+    background-color: #191c03;
+    padding: 30px 20px;
+}
+footer a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+footer .inform-cont{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+footer h3{
+    color: #c3c63b;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+footer li{
+
+    color: rgba(255, 255, 255, 0.63);
+    margin-bottom: 10px;
+}
+footer ul{
+    margin-bottom: 15px;
+}
+.cont .emal{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.63);
+    margin-bottom: 10px;
+}
+.cont .emal:hover{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.63);
+}
+
+.map-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+footer p{
+    color: #c3c63b;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    footer p{
+        font-size: 10px;
+    } 
+    footer .inform-cont{
+        flex-direction: column;
+        align-items: start;
+    }
+    footer h3{
+        font-size: 12px;
+    }
+    footer li{
+        font-size: 11px;
+    }
+}
+    </style>
 </head>
 <body>
 
     <header class="menu-fixo">
         <div class="overlay"></div>
-        <a href=""><img src="./src/img/SI.png" alt="logo"></a>
+        <a href="index.html"><img src="./src/img/SI.png" alt="logo"></a>
         <nav class="menu">
             <a href="index.html">início</a>
             <a href="#">produtos</a>
             <a href="index.html">história</a>
             <a href="index.html">contacto</a>
+            <a href="invest.html">Investir</a>
         </nav>
     </header>
 
     <div class="geral">
+      <section class="meterol">
+        <a class="weatherwidget-io"
+     href="https://forecast7.com/pt/n9d0013d30/luanda-province/"
+     data-label_1="LUANDA"
+     data-label_2="TEMPO"
+     data-theme="original">LUANDA TEMPO</a>
+      </section>
         <header>
-          <h1>FICHAS TÉCNICAS</h1>
-          <p>SAIBA TUDO PARA UMA COLHEITA DE SUCESSO</p>
+          <h1>NOSSOS PRODUTOS</h1>
+          <p>SAIBA TUDO SOBRE OS NOSSOS PRINCIPAIS PRODUTOS E QUALIDADE</p>
         </header>
     
         <main class="grid-container">
-          <div class="card" style="background-image: url('img/abobora.jpg');">
-            <h2>ABÓBORA</h2>
-            <button class="btn verde" onclick="abrirModal('pdfs/abobora.pdf')">VER FICHA TÉCNICA</button>
+          <div class="card" style="background-image: url('./src/img/tomate.jpg');">
+            <h2>TOMATE</h2>
+            <button class="btn verde" onclick="abrirModal('src/pdf/KANT.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
     
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/pimento.jpg');">
+            <h2>PIMENTO</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/cenoura.jpg');">
+            <h2>CENOURA</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
+          <div class="card" style="background-image: url('./src/img/alface.jpg');">
             <h2>ALFACE</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/morango.jpg');">
+            <h2>MORANGO</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/laranja.jpg');">
+            <h2>LARANJA</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/manga.jpg');">
+            <h2>MANGA</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/abacate.jpg');">
+            <h2>ABACATE</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/feijão.jpg');">
+            <h2>FEIJÃO</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
-          <div class="card" style="background-image: url('img/alface.jpg');">
-            <h2>ALFACE</h2>
+          <div class="card" style="background-image: url('./src/img/cebola.jpg');">
+            <h2>CEBOLA</h2>
             <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
+          </div>
+          <div class="card" style="background-image: url('./src/img/limão.jpg');">
+            <h2>LIMÃO</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
+          </div>
+          <div class="card" style="background-image: url('./src/img/alho.jpg');">
+            <h2>ALHO</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
+          </div>
+          <div class="card" style="background-image: url('./src/img/pepino.jpg');">
+            <h2>PEPINO</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
+          </div>
+          <div class="card" style="background-image: url('./src/img/gengibre.jpg');">
+            <h2>GENGIBRE</h2>
+            <button class="btn verde" onclick="abrirModal('pdfs/alface.pdf')">VER FICHA TÉCNICA</button>
+            <button class="btn verde" onclick="window.location.href='invest.html';" >INVESTIR</button>
           </div>
     
-          <!-- ...demais cards seguem o mesmo padrão... -->
+        
         </main>
     
         <!-- Modal PDF -->
@@ -83,6 +196,46 @@
         </div>
       </div>
    
+
+      <!-- footer -->
+
+      <footer id="footer">
+        <a class="fot" href="#"><img src="./src/img/SI.png" alt="logo"></a>
+       
+        <div class="inform-cont">
+            <ul class="local">
+                <h3>Localização</h3>
+                <li>Estrada Nacional 230, Km 30 <br>
+                    Município de Viana – Zona de Calumbo
+                    Luanda, Angola</li>
+                <li>Coordenadas: -9.051240, 13.589710</li>
+            </ul>
+            <ul class="cont">
+                <h3>Contactos</h3>
+                <li><i class="fas fa-phone"></i> (244) 922 333 444 / 997 555 777</li>
+                <li class="emal"><i class="fas fa-envelope"></i> geralfazenda@belosol.com</li>
+            </ul>
+            <ul class="hora">
+                <h3>Horários de Antendimento</h3>
+                <li>Segunda a Sexta-feira: 08:00 - 17:00</li>
+                <li>Sábado: 08:00 - 12:00</li>
+            </ul>
+        </div>
+        <div class="map-container">
+            <iframe 
+            src="https://www.google.com/maps?q=-9.051240, 13.589710&hl=pt-PT&z=10&output=embed" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+                <!-- allowfullscreen="" ->  abra o mapa em tela cheia se quiser.
+                loading="lazy" -> mapa carregar só quando o usuário rolar a página até perto dele.
+                referrerpolicy="no-referrer-when-downgrade"> -> não envia o endereço do teu site (o "referer"), mantendo mais privacidade -->
+            </iframe>
+        </div>
+        <p>&copy;Todos os direitos reservados . Fazenda Belo Sol 2024</p>
+    </footer>
+
+  
     <script src="./src/js/script.js"></script>
 </body>
 </html>
