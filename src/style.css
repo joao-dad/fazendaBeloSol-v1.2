@@ -3,7 +3,7 @@
     margin: 0;
     font-size: 100%;
     box-sizing: border-box;
-    font-family: Century Gothic;
+    font-family: 'Century Gothic', 'Montserrat', sans-serif;
 }
 
 nav, li{
