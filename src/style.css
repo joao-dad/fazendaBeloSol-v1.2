@@ -16,6 +16,51 @@ a{
     opacity: 0.9;
 }
 
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  backdrop-filter: blur(2px);
+}
+
+.logo-loader {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ffcc00; /* Cor amarela da logo */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+/* Animação de rotação */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animação pulsante na logo */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+
+
 /*HEADER*/
 
 .menu-fixo {
@@ -205,12 +250,10 @@ a{
     background-clip: content-box;
     background-size: cover;
     background-position: center;
-    filter: grayscale(100%);
     transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 #conhe .grid li:hover {
-    filter: grayscale(0%);
     transform: scale(1.05);
     z-index: 1;
 }
@@ -338,7 +381,7 @@ img{
 
 .inf{
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
 }
 .qualid{
     width: 90%;
@@ -413,7 +456,8 @@ img{
 
 @media screen and (max-width: 768px) {
     .inf{
-        margin-bottom: 240px;
+        min-height: auto;
+        margin-bottom: 10px;
     }
     .qualid {
         flex-direction: column;
@@ -479,7 +523,8 @@ img{
 
 #parceiros{
     width: 100%;
-    height: 125vh;
+    height: auto;
+    min-height: 125vh;
 }
 .parc{
     width: 90%;
@@ -525,63 +570,57 @@ img{
     margin-bottom: 10px;
     margin: 0 auto;
 }
+
 .pcs h3{
     width: 100%;
     color: #555555d2;
     text-align: center;
     margin-bottom: 10px;
 }
-.logo-parcs{
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    height: 25vh;
-    background-color: transparent;
-}
-.logs{
-    width: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-}
-.logs img{
-    width: 100px;
-}
-.logs img:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
+.logo-parcs {
+      width: 100%;
+      overflow: hidden;
+      background-color: white;
+      padding: 20px 0;
+    }
 
-.logo-track {
-    display: flex;
-    width: 100%;
-    animation: scroll 20s linear infinite;
-}
+    .logo-track {
+      display: flex;
+      width: max-content;
+      animation: scroll 20s linear infinite;
+    }
 
-.logs {
-    display: flex;
-}
+    .logs {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
 
-.logs img {
-    width: 100px;
-    margin: 0 20px;
-}
+    .logs img {
+      width: 100px;
+      height: auto;
+      transition: transform 0.3s ease;
+    }
 
-@keyframes scroll {
-    0% {
+    .logs img:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes scroll {
+      0% {
         transform: translateX(0);
-    }
-    100% {
+      }
+      100% {
         transform: translateX(-50%);
+      }
     }
-}
 
 @media screen and (max-width: 768px) {
     #parceiros{
-        margin-bottom: 5px;
-        height: 135dvh;
+        height: auto !important;
+        min-height: auto;
+        margin-bottom: 0;
+        padding-bottom: 20px;
     }
     .parc {
         flex-direction: column;
@@ -635,19 +674,11 @@ img{
 
     .logs img {
         width: 70px;
-    }
-}
+      }
 
-@media screen and (min-width: 769px) and (max-width: 1023px) {
-     .foto-parc {
-        width: 90%;
-    }
-
-    .foto-parc img {
-        width: 100px;
-        height: 200px;
-        margin-top: 0;
-    }
+      .logo-track {
+        animation: scroll 20s linear infinite;
+      }
 }
 
 /*videos*/

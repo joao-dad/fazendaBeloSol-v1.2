@@ -87,6 +87,11 @@ footer p{
 </head>
 <body>
 
+    <div id="preloader">
+  <img src="./src/img/SI.png" alt="Logo Fazenda Belo Sol" class="logo-loader">
+  <div class="spinner"></div>
+</div>
+
     <header class="menu-fixo">
         <div class="overlay"></div>
         <a href="index.html"><img src="./src/img/SI.png" alt="logo"></a>
@@ -95,7 +100,7 @@ footer p{
             <a href="product.html">produtos</a>
             <a href="index.html">história</a>
             <a href="index.html">contacto</a>
-            <a href="#">Investir</a>
+            <a href="invest.html">Investir</a>
         </nav>
     </header>
 
@@ -187,6 +192,17 @@ footer p{
     </footer>
 
     <script>
+
+
+  window.addEventListener('load', function () {
+    const preloader = document.getElementById('preloader');
+    preloader.style.opacity = '0';
+    setTimeout(() => {
+      preloader.style.display = 'none';
+    }, 500);
+  });
+
+
         // Dados dos produtos atualizados
         const productsData = [
             { id: 1, name: 'Tomate', rate: 0.04, image: 'src/img/tomate.jpg' },
